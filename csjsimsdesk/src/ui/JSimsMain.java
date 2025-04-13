@@ -34,6 +34,7 @@ public class JSimsMain extends javax.swing.JFrame {
         mnuiNewCollege = new javax.swing.JMenuItem();
         mnuiNewDepartment = new javax.swing.JMenuItem();
         mnuiViewColleges = new javax.swing.JMenuItem();
+        jMenuItem1 = new javax.swing.JMenuItem();
         helpMenu = new javax.swing.JMenu();
         contentMenuItem = new javax.swing.JMenuItem();
         aboutMenuItem = new javax.swing.JMenuItem();
@@ -57,6 +58,11 @@ public class JSimsMain extends javax.swing.JFrame {
 
         mnuOrganization.setMnemonic('O');
         mnuOrganization.setText("Institution");
+        mnuOrganization.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                mnuOrganizationActionPerformed(evt);
+            }
+        });
 
         mnuiNewCollege.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_C, java.awt.event.InputEvent.CTRL_DOWN_MASK));
         mnuiNewCollege.setText("New College");
@@ -83,6 +89,14 @@ public class JSimsMain extends javax.swing.JFrame {
             }
         });
         mnuOrganization.add(mnuiViewColleges);
+
+        jMenuItem1.setText("NewFildOfStudy");
+        jMenuItem1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jMenuItem1ActionPerformed(evt);
+            }
+        });
+        mnuOrganization.add(jMenuItem1);
 
         menuBar.add(mnuOrganization);
 
@@ -140,6 +154,20 @@ public class JSimsMain extends javax.swing.JFrame {
         faculty.toFront();
     }//GEN-LAST:event_mnuiViewCollegesActionPerformed
 
+    private void mnuOrganizationActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_mnuOrganizationActionPerformed
+        // TODO add your handling code here:
+        NewFildOfStudy NewFild= new NewFildOfStudy(this,true);
+        NewFild.setVisible(true);
+        NewFild.setLocationRelativeTo(this);
+    }//GEN-LAST:event_mnuOrganizationActionPerformed
+
+    private void jMenuItem1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem1ActionPerformed
+        // TODO add your handling code here:
+        NewFildOfStudy NewFild= new NewFildOfStudy(this,true);
+        NewFild.setVisible(true);
+        NewFild.setLocationRelativeTo(this);
+    }//GEN-LAST:event_jMenuItem1ActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -182,6 +210,7 @@ public class JSimsMain extends javax.swing.JFrame {
     private javax.swing.JMenuItem exitMenuItem;
     private javax.swing.JMenu fileMenu;
     private javax.swing.JMenu helpMenu;
+    private javax.swing.JMenuItem jMenuItem1;
     private javax.swing.JMenuBar menuBar;
     private javax.swing.JMenu mnuOrganization;
     private javax.swing.JMenuItem mnuiNewCollege;
